@@ -36,6 +36,7 @@ import SkillEVElectronicPage from "./pages/SkillEVElectronic";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Galary from "./pages/Galary";
+import NotFound from "./pages/404";
 
 export default function App() {
   const handleScrollTop = () => {
@@ -62,6 +63,7 @@ export default function App() {
       >
 
         <Routes>
+        
           <Route path="/" element={<HomePage />} />
 
           {/* About */}
@@ -72,13 +74,14 @@ export default function App() {
 
           {/* Skill Development */}
           <Route path="/services" element={<Services />} />
-
           {/* Products */}
+
           <Route
             path="/galary"
             element={<Galary />}
           />
 
+          <Route path="*" element={<NotFound   />} />
           
         </Routes>
       </Container>
