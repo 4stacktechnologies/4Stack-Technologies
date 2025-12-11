@@ -1,0 +1,909 @@
+// src/pages/Home.jsx
+import React from "react";
+import {
+  Box,
+  Grid,
+  Paper,
+  Typography,
+  Button,
+  Chip,
+  IconButton,
+  Stack,
+} from "@mui/material";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+
+// ---- local images for intro carousel (right side of ESM section) ----
+import Intro1 from "../assets/1A-1920x1195.jpg";
+import Intro2 from "../assets/2A-1920x1195.jpg";
+import Intro3 from "../assets/4A-1920x1194.jpg";
+
+// ================= TOP HERO: 6 SLIDES (removed SEMS-AI, IBC, SARFAESI, Systems Management) =================
+const heroSlides = [
+  {
+    title: "Skill Development",
+    tag: "Future-ready Workforce",
+    description:
+      "Industry-aligned skill development programs that empower professionals and students for emerging opportunities.",
+    image:
+      "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  },
+  {
+    title: "Digital Manufacturing",
+    tag: "Industry 4.0",
+    description:
+      "Digital manufacturing and smart factory solutions that connect machines, data and decisions on one platform.",
+    image:
+      "https://images.pexels.com/photos/3738735/pexels-photo-3738735.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  },
+  {
+    title: "Insolvency Professional",
+    tag: "Expert Stewardship",
+    description:
+      "Experienced Insolvency Professionals (IPs) who manage complex cases with transparent stakeholder engagement.",
+    image:
+      "https://images.pexels.com/photos/1181400/pexels-photo-1181400.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  },
+  {
+    title: "Data Science",
+    tag: "Decisions From Data",
+    description:
+      "Data science solutions that convert raw numbers into actionable insights for finance and operations.",
+    image:
+      "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  },
+  {
+    title: "Internet of Things",
+    tag: "Smart Connected Systems",
+    description:
+      "IoT-based monitoring platforms for energy, assets and operations, built on secure embedded and cloud stacks.",
+    image:
+      "https://images.pexels.com/photos/1181465/pexels-photo-1181465.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  },
+];
+
+// ================= INTRO MINI CAROUSEL (RIGHT SIDE, 3 SLIDES) =================
+const introSlides = [{ image: Intro1 }, { image: Intro2 }, { image: Intro3 }];
+
+// ================= OTHER DATA (SERVICES, PROJECTS) =================
+const serviceCards = [
+  {
+    title: "Smart Energy Monitoring System-AI",
+    text:
+      "SCADA-grade, real-time energy monitoring with AI-powered analytics to track cost, PF, MD and ToD across your plant.",
+    image:
+      "https://images.pexels.com/photos/3738764/pexels-photo-3738764.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  },
+  {
+    title: "Product Development",
+    text: "Innovative product development services to convert ideas into scalable, market-ready solutions.",
+    image:
+      "https://images.pexels.com/photos/196645/pexels-photo-196645.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  },
+  {
+    title: "Smart Genset Monitoring System",
+    text:
+      "End-to-end monitoring for genset-powered mobile light towers, covering fuel, run hours, GPS, theft detection and alerts.",
+    image:
+      "https://images.pexels.com/photos/2102416/pexels-photo-2102416.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  },
+  {
+    title: "Data Science",
+    text: "Cutting-edge data science solutions to unlock insights and drive smarter business decisions.",
+    image:
+      "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  },
+  {
+    title: "Skill Development",
+    text:
+      "Industry-integrated training tracks in IoT, Data Science, EV, Smart Manufacturing and more for students and professionals.",
+    image:
+      "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  },
+  {
+    title: "Skill Development Programs",
+    text:
+      "Custom-designed modules, projects and COE-based learning paths to build a future-ready, hands-on workforce.",
+    image:
+      "https://images.pexels.com/photos/1181395/pexels-photo-1181395.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  },
+];
+
+// ================= PROJECTS (6) =================
+const projects = [
+  {
+    title: "K.S.R College of Engineering",
+    category: "Center of Excellence",
+    tag: "Rs. 25 Cr.",
+    description:
+      "ESM has established a Center of Excellence (COE) in Smart Manufacturing at K.S.R. College of Engineering, featuring industrial-grade CNC machines, 3D printers, and automation systems. The COE fosters innovation, hands-on skill development, research, and provides industry-ready solutions for emerging technologies.",
+    image:"https://esm.co.in/wp-content/uploads/2025/04/8A-KSR.jpg"
+  },
+  {
+    title: "GLA University",
+    category: "Center of Excellence",
+    tag: "Rs. 25 Cr.",
+    description:
+      "ESM has established a Center of Excellence (COE) in Smart Manufacturing at GLA University, equipped with industrial-grade CNC machines, 3D printers, and automation systems. The COE promotes innovation, hands-on skill development, cutting-edge research, and delivers industry-ready solutions for emerging technologies.",
+    image:
+      "https://esm.co.in/wp-content/uploads/2025/04/10A-GLA-1536x960.jpg",
+  },
+  {
+    title: "DTE Uttarakhand",
+    category: "Center of Excellence",
+    tag: "Rs. 62 Cr.",
+    description:
+      "ESM has signed an MoU with the Government of Uttarakhand to establish a Center of Excellence (COE) in Smart Manufacturing. The upcoming COE will be equipped with industrial-grade CNC machines, 3D printers, and automation systems, aiming to foster innovation, hands-on skill development, research, and industry-ready solutions for emerging technologies.",
+    image:
+      "https://esm.co.in/wp-content/uploads/2025/04/12A-Uttarakhand-1536x960.jpg",
+  },
+  {
+    title: "CoE SCET",
+    category: "Center of Excellence",
+    tag: "Rs. 26 Cr.",
+    description:
+      "ESM has established a Center of Excellence (COE) focused on Data Science, IIoT, and Smart Manufacturing, equipped with industrial-grade robotic arms, CNC machines, and showcasing new products like Smart Washroom and Smart Agriculture solutions, fostering innovation and skill development.",
+    image:
+      "https://esm.co.in/wp-content/uploads/2025/04/2A-SCET-1536x960.jpg",
+  },
+  {
+    title: "DTE Maharashtra",
+    category: "Center of Excellence",
+    tag: "Rs. 1.25 Cr.",
+    description:
+      "ESM has established a Center of Excellence (COE) focused on Smart Manufacturing with PTC solutions worth ₹1.25 crore across five Government Polytechnics in Maharashtra, fostering advanced skill development, innovation, and industry-oriented training.",
+    image:
+      "	https://esm.co.in/wp-content/uploads/2025/04/4A-DTE-Maharashtra-1536x960.jpg",
+  },
+  {
+    title: "ESM COE at Invertis University",
+    category: "Center of Excellence",
+    tag: "Rs. 30 Cr.",
+    description:
+      "ESM has established a Center of Excellence (COE) focused on Data Science, IIoT, Smart Manufacturing, with industrial-grade robotic arms, CNC machines, fostering innovation, skill development, and industry-ready solutions.",
+    image:
+      "https://esm.co.in/wp-content/uploads/2025/04/6A-ESM-1-1536x960.jpg",
+  },
+];
+
+export default function HomePage() {
+  // HERO + intro mini carousel state
+  const [slide, setSlide] = React.useState(0);
+  const [introSlide, setIntroSlide] = React.useState(0);
+
+  // projects carousel: index of FIRST visible card
+  const [projectIndex, setProjectIndex] = React.useState(0);
+  const [projDirection, setProjDirection] = React.useState(1); // 1 = next, -1 = prev
+  const VISIBLE_COUNT = 4;
+
+  const visibleProjects = React.useMemo(
+    () =>
+      Array.from({ length: VISIBLE_COUNT }).map((_, i) => {
+        const idx = (projectIndex + i + projects.length) % projects.length;
+        return projects[idx];
+      }),
+    [projectIndex]
+  );
+
+  const goNextProjects = () => {
+    setProjDirection(1);
+    setProjectIndex((prev) => (prev + 1) % projects.length);
+  };
+
+  const goPrevProjects = () => {
+    setProjDirection(-1);
+    setProjectIndex((prev) =>
+      prev === 0 ? projects.length - 1 : prev - 1
+    );
+  };
+
+  const goToProjectIndex = (idx) => {
+    if (idx === projectIndex) return;
+    setProjDirection(idx > projectIndex ? 1 : -1);
+    setProjectIndex(idx);
+  };
+
+  // HERO: auto-slide every 3s
+  React.useEffect(() => {
+    const id = setInterval(
+      () => setSlide((prev) => (prev + 1) % heroSlides.length),
+      3000
+    );
+    return () => clearInterval(id);
+  }, []);
+
+  // INTRO MINI CAROUSEL: auto-slide every 4s
+  React.useEffect(() => {
+    const id = setInterval(
+      () => setIntroSlide((prev) => (prev + 1) % introSlides.length),
+      4000
+    );
+    return () => clearInterval(id);
+  }, []);
+
+  // PROJECTS AUTO-SLIDE: every 4.5s
+  React.useEffect(() => {
+    const id = setInterval(() => {
+      setProjDirection(1);
+      setProjectIndex((prev) => (prev + 1) % projects.length);
+    }, 4500);
+    return () => clearInterval(id);
+  }, []);
+
+  const handlePrevHero = () => {
+    setSlide((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1));
+  };
+
+  const handleNextHero = () => {
+    setSlide((prev) => (prev + 1) % heroSlides.length);
+  };
+
+  const handlePrevIntro = () => {
+    setIntroSlide((prev) =>
+      prev === 0 ? introSlides.length - 1 : prev - 1
+    );
+  };
+
+  const handleNextIntro = () => {
+    setIntroSlide((prev) => (prev + 1) % introSlides.length);
+  };
+
+  const currentHero = heroSlides[slide];
+  const currentIntro = introSlides[introSlide];
+
+  return (
+    <Box sx={{ bgcolor: "#f3f4f6" }}>
+      {/* ================= TOP FULL-WIDTH HERO ================= */}
+      <Box
+        sx={{
+          position: "relative",
+          left: "50%",
+          right: "50%",
+          maxWidth: "100vw",
+          marginLeft: "-50vw",
+          marginRight: "-50vw",
+          width: "100vw",
+          mb: { xs: 4, md: 6 },
+        }}
+      >
+        <Box
+          sx={{
+            position: "relative",
+            minHeight: { xs: "70vh", md: "80vh" },
+            overflow: "hidden",
+          }}
+        >
+          {/* Animated hero layer */}
+          <Box
+            key={slide}
+            sx={{
+              position: "absolute",
+              inset: 0,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              animation: "heroFade 800ms ease-in-out",
+              "@keyframes heroFade": {
+                "0%": {
+                  opacity: 0,
+                  transform: "scale(1.03) translateY(8px)",
+                },
+                "100%": {
+                  opacity: 1,
+                  transform: "scale(1) translateY(0)",
+                },
+              },
+            }}
+          >
+            {/* background image */}
+            <Box
+              sx={{
+                position: "absolute",
+                inset: 0,
+                maxWidth:"100vw",
+                backgroundImage: `url(${currentHero.image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center center",
+              }}
+            />
+            {/* overlay */}
+            <Box
+              sx={{
+                position: "absolute",
+                inset: 0,
+                background:
+                  "linear-gradient(90deg, rgba(15,23,42,0.85) 0%, rgba(15,23,42,0.55) 40%, rgba(15,23,42,0.25) 100%)",
+              }}
+            />
+            {/* content */}
+            <Box
+              sx={{
+                position: "relative",
+                zIndex: 1,
+                height: "100%",
+                px: { xs: 3, md: 8 },
+                py: { xs: 4, md: 6 },
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                maxWidth: { xs: "100%", md: "60%" },
+              }}
+            >
+              {/* tag pill */}
+              <Box
+                sx={{
+                  mb: 3,
+                  display: "inline-flex",
+                  alignItems: "center",
+                  borderRadius: 999,
+                  bgcolor: "rgba(15,23,42,0.7)",
+                  border: "1px solid rgba(148,163,184,0.7)",
+                  px: 3,
+                  py: 0.6,
+                }}
+              >
+                <Typography
+                  variant="caption"
+                  sx={{
+                    letterSpacing: 2,
+                    textTransform: "uppercase",
+                    color: "#E5E7EB",
+                  }}
+                >
+                  {currentHero.tag}
+                </Typography>
+              </Box>
+
+              <Typography
+                variant="h3"
+                sx={{
+                  fontWeight: 800,
+                  color: "white",
+                  mb: 1,
+                }}
+              >
+                {currentHero.title}
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  color: "rgba(241,245,249,0.95)",
+                  maxWidth: 540,
+                  mb: 3,
+                }}
+              >
+                {currentHero.description}
+              </Typography>
+
+              <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
+                <Button variant="contained" color="primary">
+                  Read More
+                </Button>
+                <Button
+                  variant="outlined"
+                  sx={{
+                    color: "white",
+                    borderColor: "rgba(148,163,184,0.7)",
+                    "&:hover": { borderColor: "white" },
+                  }}
+                >
+                  Explore Services
+                </Button>
+              </Box>
+            </Box>
+          </Box>
+
+          {/* HERO arrows */}
+          <IconButton
+            onClick={handlePrevHero}
+            sx={{
+              position: "absolute",
+              top: "50%",
+              left: 16,
+              transform: "translateY(-50%)",
+              bgcolor: "rgba(15,23,42,0.75)",
+              color: "white",
+              zIndex: 2,
+              "&:hover": { bgcolor: "rgba(15,23,42,0.95)" },
+            }}
+          >
+            <ArrowBackIosNewIcon fontSize="small" />
+          </IconButton>
+          <IconButton
+            onClick={handleNextHero}
+            sx={{
+              position: "absolute",
+              top: "50%",
+              right: 16,
+              transform: "translateY(-50%)",
+              bgcolor: "rgba(15,23,42,0.75)",
+              color: "white",
+              zIndex: 2,
+              "&:hover": { bgcolor: "rgba(15,23,42,0.95)" },
+            }}
+          >
+            <ArrowForwardIosIcon fontSize="small" />
+          </IconButton>
+
+          {/* HERO clickable dots */}
+          <Box
+            sx={{
+              position: "absolute",
+              bottom: 16,
+              left: 0,
+              right: 0,
+              display: "flex",
+              justifyContent: "center",
+              gap: 1,
+            }}
+          >
+            {heroSlides.map((_, i) => (
+              <Box
+                key={i}
+                onClick={() => setSlide(i)}
+                sx={{
+                  width: i === slide ? 18 : 8,
+                  height: 8,
+                  borderRadius: 999,
+                  bgcolor:
+                    i === slide ? "white" : "rgba(148,163,184,0.7)",
+                  transition: "all 0.2s",
+                  cursor: "pointer",
+                }}
+              />
+            ))}
+          </Box>
+        </Box>
+      </Box>
+
+      {/* ================= MAIN CONTENT CONTAINER ================= */}
+      <Box
+        sx={{
+          maxWidth: "1200px",
+          mx: "auto",
+          px: { xs: 2, md: 4 },
+          pb: { xs: 6, md: 8 },
+          display: "flex",
+          flexDirection: "column",
+          gap: { xs: 6, md: 8 },
+        }}
+      >
+        {/* ================= ESM INTRO SECTION ================= */}
+        <Grid container spacing={4} alignItems="stretch">
+          {/* LEFT TEXT */}
+          <Grid item xs={12} md={7}>
+            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1 }}>
+              ESM
+            </Typography>
+            <Typography variant="h4" sx={{ fontWeight: 700, mb: 2 }}>
+              Welcome To Elixgen Systems Management Pvt. Ltd.
+            </Typography>
+            <Typography
+              variant="body1"
+              color="text.secondary"
+              sx={{ mb: 3 }}
+            >
+              Elixgen System Management Pvt. Ltd. (ESM) is a Nagpur-based
+              technology company focused on IoT product development and
+              skill-driven innovation. Through its dedicated Innovation Lab
+              and Center of Excellence initiatives, ESM works with students,
+              engineers, and industry partners to design and build real-world
+              solutions using embedded systems, cloud platforms, data
+              analytics, and automation technologies. The company combines
+              hands-on product R&D with structured training programs, helping
+              young talent move from classroom concepts to working prototypes
+              while supporting industries in their digital transformation
+              journey. With a strong emphasis on “Make in India” and
+              future-ready skills, ESM is building an ecosystem where
+              practical learning, innovation, and industrial problem-solving
+              come together under one roof.
+            </Typography>
+          </Grid>
+
+          {/* RIGHT HALF: MINI CAROUSEL */}
+          <Grid item xs={12} md={5}>
+            <Paper
+              elevation={0}
+              sx={{
+                height: "100%",
+                borderRadius: "2px",
+                overflow: "hidden",
+                boxShadow: "0 18px 45px rgba(15,23,42,0.15)",
+                position: "relative",
+              }}
+            >
+              <Box
+                sx={{
+                  position: "relative",
+                  height: "100%",
+                  minHeight: 260,
+                  overflow: "hidden",
+                }}
+              >
+                {/* slide image with fade */}
+                <Box
+                  key={introSlide}
+                  sx={{
+                    position: "absolute",
+                    inset: 0,
+                    backgroundImage: `url(${currentIntro.image})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    animation: "introFade 700ms ease-in-out",
+                    "@keyframes introFade": {
+                      "0%": { opacity: 0, transform: "scale(1.03)" },
+                      "100%": { opacity: 1, transform: "scale(1)" },
+                    },
+                  }}
+                />
+
+                {/* subtle gradient */}
+                <Box
+                  sx={{
+                    position: "absolute",
+                    inset: 0,
+                    background:
+                      "linear-gradient(180deg, transparent 55%, rgba(15,23,42,0.2) 100%)",
+                  }}
+                />
+
+                {/* invisible click zones */}
+                <Box
+                  onClick={handlePrevIntro}
+                  sx={{
+                    position: "absolute",
+                    top: 0,
+                    bottom: 0,
+                    left: 0,
+                    width: "30%",
+                    cursor: "pointer",
+                    zIndex: 3,
+                  }}
+                />
+                <Box
+                  onClick={handleNextIntro}
+                  sx={{
+                    position: "absolute",
+                    top: 0,
+                    bottom: 0,
+                    right: 0,
+                    width: "30%",
+                    cursor: "pointer",
+                    zIndex: 3,
+                  }}
+                />
+              </Box>
+            </Paper>
+          </Grid>
+        </Grid>
+
+        {/* ================= SERVICES GRID ================= */}
+        <Box>
+          <Typography variant="h5" sx={{ fontWeight: 700, mb: 2.5 }}>
+            Services
+          </Typography>
+
+          <Grid container spacing={{ xs: 2.5, md: 3.5 }}>
+            {serviceCards.map((card) => (
+              <Grid item xs={12} md={4} key={card.title}>
+                <Box
+                  sx={{
+                    position: "relative",
+                    borderRadius: "8px",
+                    overflow: "hidden",
+                    minHeight: { xs: 220, md: 260 },
+                    cursor: "pointer",
+                    boxShadow: "0 20px 40px rgba(15,23,42,0.35)",
+                    transform: "translateY(0) scale(1)",
+                    transition:
+                      "transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease",
+                    "&:hover": {
+                      transform: "translateY(-8px) scale(1.02)",
+                      boxShadow: "0 30px 70px rgba(15,23,42,0.55)",
+                    },
+                    "&:hover .overlay": {
+                      opacity: 0.95,
+                    },
+                    "&:hover .bgImg": {
+                      transform: "scale(1.06)",
+                    },
+                  }}
+                >
+                  {/* background image */}
+                  <Box
+                    className="bgImg"
+                    sx={{
+                      position: "absolute",
+                      inset: 0,
+                      backgroundImage: `url(${card.image})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      transition: "transform 0.6s ease",
+                      transform: "scale(1.02)",
+                    }}
+                  />
+
+                  {/* dark gradient overlay */}
+                  <Box
+                    className="overlay"
+                    sx={{
+                      position: "absolute",
+                      inset: 0,
+                      background:
+                        "linear-gradient(180deg, rgba(15,23,42,0.1) 0%, rgba(15,23,42,0.92) 100%)",
+                      opacity: 0.88,
+                      transition: "opacity 0.3s ease",
+                    }}
+                  />
+
+                  {/* content */}
+                  <Box
+                    sx={{
+                      position: "relative",
+                      zIndex: 1,
+                      p: { xs: 2.4, md: 2.8 },
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "flex-end",
+                      height: "100%",
+                    }}
+                  >
+                    <Typography
+                      variant="subtitle1"
+                      sx={{
+                        fontWeight: 700,
+                        color: "white",
+                        mb: 1,
+                        fontSize: { xs: 18, md: 20 },
+                      }}
+                    >
+                      {card.title}
+                    </Typography>
+
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: "rgba(241,245,249,0.92)",
+                        mb: 2,
+                        fontSize: { xs: 14, md: 15 },
+                      }}
+                    >
+                      {card.text}
+                    </Typography>
+
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: "#22d3ee",
+                        fontWeight: 600,
+                        fontSize: 14,
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: 0.5,
+                        letterSpacing: 0.4,
+                      }}
+                    >
+                      READ MORE →
+                    </Typography>
+                  </Box>
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+
+        {/* ================= PROJECTS PORTFOLIO (CAROUSEL) ================= */}
+        <Box>
+          <Typography
+            variant="h5"
+            sx={{ fontWeight: 700, textAlign: "center", mb: 1 }}
+          >
+            Our Projects Portfolio
+          </Typography>
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            sx={{ textAlign: "center", mb: 3 }}
+          >
+            Showcasing Excellence in Execution
+          </Typography>
+
+          <Box sx={{ position: "relative", px: { xs: 0, md: 3 } }}>
+            {/* LEFT ARROW */}
+            <IconButton
+              onClick={goPrevProjects}
+              sx={{
+                position: "absolute",
+                top: "50%",
+                left: { xs: -4, md: -10 },
+                transform: "translateY(-50%)",
+                bgcolor: "white",
+                boxShadow: "0 10px 30px rgba(15,23,42,0.25)",
+                "&:hover": { bgcolor: "grey.100" },
+                zIndex: 2,
+              }}
+            >
+              <ArrowBackIosNewIcon fontSize="small" />
+            </IconButton>
+
+            {/* RIGHT ARROW */}
+            <IconButton
+              onClick={goNextProjects}
+              sx={{
+                position: "absolute",
+                top: "50%",
+                right: { xs: -4, md: -10 },
+                transform: "translateY(-50%)",
+                bgcolor: "white",
+                boxShadow: "0 10px 30px rgba(15,23,42,0.25)",
+                "&:hover": { bgcolor: "grey.100" },
+                zIndex: 2,
+              }}
+            >
+              <ArrowForwardIosIcon fontSize="small" />
+            </IconButton>
+
+            {/* SLIDING GRID */}
+            <Box
+              key={projectIndex}
+              sx={{
+                pt: 1,
+                pb: 2,
+                animation:
+                  projDirection === 1
+                    ? "portfolioSlideLeft 500ms ease"
+                    : "portfolioSlideRight 500ms ease",
+                overflow: "visible", // allow hover lift
+                "@keyframes portfolioSlideLeft": {
+                  "0%": { opacity: 0, transform: "translateX(40px)" },
+                  "100%": { opacity: 1, transform: "translateX(0)" },
+                },
+                "@keyframes portfolioSlideRight": {
+                  "0%": { opacity: 0, transform: "translateX(-40px)" },
+                  "100%": { opacity: 1, transform: "translateX(0)" },
+                },
+              }}
+            >
+              <Grid container spacing={3}>
+                {visibleProjects.map((p) => (
+                  <Grid item xs={12} md={3} key={p.title}>
+                    <Paper
+                      elevation={0}
+                      sx={{
+                        borderRadius: 4,
+                        overflow: "hidden",
+                        height: "100%",
+                        border: "1px solid rgba(148,163,184,0.4)",
+                        display: "flex",
+                        flexDirection: "column",
+                        transition:
+                          "transform 0.3s ease, box-shadow 0.3s ease",
+                        boxShadow: "0 18px 40px rgba(15,23,42,0.12)",
+                        "&:hover": {
+                          transform: "translateY(-10px)",
+                          boxShadow: "0 26px 60px rgba(15,23,42,0.28)",
+                        },
+                      }}
+                    >
+                      {/* TOP IMAGE */}
+                      <Box
+                        sx={{
+                          position: "relative",
+                          height: 190,
+                          backgroundImage: `url(${p.image})`,
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                        }}
+                      >
+              
+                      </Box>
+
+                      {/* CONTENT */}
+                      <Box sx={{ p: 2.3, flex: 1 }}>
+                        <Typography
+                          variant="subtitle1"
+                          sx={{
+                            fontWeight: 700,
+                            mb: 0.5,
+                            fontSize: 17,
+                          }}
+                        >
+                          {p.title}
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          sx={{
+                            color: "primary.main",
+                            fontWeight: 600,
+                            mb: 1,
+                            fontSize: 13,
+                          }}
+                        >
+                          {p.category}
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          color="text.secondary"
+                          sx={{
+                            display: "-webkit-box",
+                            WebkitLineClamp: 4,
+                            WebkitBoxOrient: "vertical",
+                            overflow: "hidden",
+                            fontSize: 14,
+                          }}
+                        >
+                          {p.description}
+                        </Typography>
+                      </Box>
+                    </Paper>
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
+          </Box>
+
+          {/* DOTS / PAGINATION */}
+          <Box
+            sx={{
+              mt: 2.5,
+              display: "flex",
+              justifyContent: "center",
+              gap: 1,
+            }}
+          >
+            {projects.map((_, idx) => (
+              <Box
+                key={idx}
+                onClick={() => goToProjectIndex(idx)}
+                sx={{
+                  width: idx === projectIndex ? 22 : 8,
+                  height: 8,
+                  borderRadius: 999,
+                  bgcolor:
+                    idx === projectIndex
+                      ? "primary.main"
+                      : "rgba(148,163,184,0.7)",
+                  cursor: "pointer",
+                  transition: "all 0.25s ease",
+                }}
+              />
+            ))}
+          </Box>
+        </Box>
+
+        {/* ================= STATS BAND ================= */}
+        <Paper
+          elevation={0}
+          sx={{
+            p: 3,
+            borderRadius: 3,
+            background:
+              "linear-gradient(90deg, rgba(27,132,231,1) 0%, rgba(124,58,237,1) 100%)",
+            color: "white",
+          }}
+        >
+          <Grid container spacing={3}>
+            {[
+              ["95", "SEMS-AI Installations"],
+              ["98", "Skill Development"],
+              ["90", "SGMS Deployments"],
+              ["92", "Smart Product Development"],
+            ].map(([value, label]) => (
+              <Grid item xs={12} md={3} key={label}>
+                <Stack
+                  spacing={0.5}
+                  alignItems={{ xs: "flex-start", md: "center" }}
+                >
+                  <Typography variant="h4" sx={{ fontWeight: 700 }}>
+                    {value}
+                  </Typography>
+                  <Typography variant="body2">{label}</Typography>
+                </Stack>
+              </Grid>
+            ))}
+          </Grid>
+        </Paper>
+      </Box>
+    </Box>
+  );
+}
