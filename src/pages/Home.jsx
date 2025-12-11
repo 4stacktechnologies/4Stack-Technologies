@@ -68,46 +68,37 @@ const introSlides = [{ image: Intro1 }, { image: Intro2 }, { image: Intro3 }];
 // ================= OTHER DATA (SERVICES, PROJECTS) =================
 const serviceCards = [
   {
-    title: "Smart Energy Monitoring System-AI",
-    text:
-      "SCADA-grade, real-time energy monitoring with AI-powered analytics to track cost, PF, MD and ToD across your plant.",
-    image:
-      "https://images.pexels.com/photos/3738764/pexels-photo-3738764.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    title: "Full-Stack Web Development",
+    text: "End-to-end web development services using modern front-end and back-end technologies to build fast, responsive, and scalable websites.",
+    image: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1600",
   },
   {
-    title: "Product Development",
-    text: "Innovative product development services to convert ideas into scalable, market-ready solutions.",
-    image:
-      "https://images.pexels.com/photos/196645/pexels-photo-196645.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    title: "Mobile App Development",
+    text: "Cross-platform and native app development with clean UI, smooth performance, and secure architecture tailored to your business needs.",
+    image: "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=1600",
   },
   {
-    title: "Smart Genset Monitoring System",
-    text:
-      "End-to-end monitoring for genset-powered mobile light towers, covering fuel, run hours, GPS, theft detection and alerts.",
-    image:
-      "https://images.pexels.com/photos/2102416/pexels-photo-2102416.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    title: "Artificial Intelligence (AI)",
+    text: "Custom AI solutions including prediction models, automation tools, data processing pipelines, and intelligent decision systems.",
+    image: "https://images.pexels.com/photos/5473955/pexels-photo-5473955.jpeg?auto=compress&cs=tinysrgb&w=1600",
   },
   {
-    title: "Data Science",
-    text: "Cutting-edge data science solutions to unlock insights and drive smarter business decisions.",
-    image:
-      "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    title: "Automation Solutions",
+    text: "Smart automation systems to streamline processes, reduce manual effort, and increase efficiency across your business operations.",
+    image: "https://images.pexels.com/photos/4194850/pexels-photo-4194850.jpeg?auto=compress&cs=tinysrgb&w=1600",
   },
   {
-    title: "Skill Development",
-    text:
-      "Industry-integrated training tracks in IoT, Data Science, EV, Smart Manufacturing and more for students and professionals.",
-    image:
-      "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    title: "Logo & Branding Design",
+    text: "Professional logo design and brand identity development to help your business stand out with a strong visual presence.",
+    image: "https://images.pexels.com/photos/4348404/pexels-photo-4348404.jpeg?auto=compress&cs=tinysrgb&w=1600",
   },
   {
-    title: "Skill Development Programs",
-    text:
-      "Custom-designed modules, projects and COE-based learning paths to build a future-ready, hands-on workforce.",
-    image:
-      "https://images.pexels.com/photos/1181395/pexels-photo-1181395.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  },
+    title: "Data Entry & Digital Documentation",
+    text: "Reliable and accurate data entry services to help you manage business information efficiently and securely.",
+    image: "https://images.pexels.com/photos/2058131/pexels-photo-2058131.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  }
 ];
+
 
 // ================= PROJECTS (6) =================
 const projects = [
@@ -117,7 +108,7 @@ const projects = [
     tag: "Rs. 25 Cr.",
     description:
       "ESM has established a Center of Excellence (COE) in Smart Manufacturing at K.S.R. College of Engineering, featuring industrial-grade CNC machines, 3D printers, and automation systems. The COE fosters innovation, hands-on skill development, research, and provides industry-ready solutions for emerging technologies.",
-    image:"https://esm.co.in/wp-content/uploads/2025/04/8A-KSR.jpg"
+    image: "https://esm.co.in/wp-content/uploads/2025/04/8A-KSR.jpg"
   },
   {
     title: "GLA University",
@@ -300,7 +291,7 @@ export default function HomePage() {
               sx={{
                 position: "absolute",
                 inset: 0,
-                maxWidth:"100vw",
+                maxWidth: "100vw",
                 backgroundImage: `url(${currentHero.image})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center center",
@@ -473,30 +464,21 @@ export default function HomePage() {
           {/* LEFT TEXT */}
           <Grid item xs={12} md={7}>
             <Typography variant="h5" sx={{ fontWeight: 700, mb: 1 }}>
-              ESM
+              4ST
             </Typography>
             <Typography variant="h4" sx={{ fontWeight: 700, mb: 2 }}>
-              Welcome To Elixgen Systems Management Pvt. Ltd.
+              Welcome To 4 STACK TECHNOLOGIES .
             </Typography>
             <Typography
               variant="body1"
               color="text.secondary"
               sx={{ mb: 3 }}
             >
-              Elixgen System Management Pvt. Ltd. (ESM) is a Nagpur-based
-              technology company focused on IoT product development and
-              skill-driven innovation. Through its dedicated Innovation Lab
-              and Center of Excellence initiatives, ESM works with students,
-              engineers, and industry partners to design and build real-world
-              solutions using embedded systems, cloud platforms, data
-              analytics, and automation technologies. The company combines
-              hands-on product R&D with structured training programs, helping
-              young talent move from classroom concepts to working prototypes
-              while supporting industries in their digital transformation
-              journey. With a strong emphasis on “Make in India” and
-              future-ready skills, ESM is building an ecosystem where
-              practical learning, innovation, and industrial problem-solving
-              come together under one roof.
+              4 Stack Technologies is a modern and innovative tech firm focused on building fast, reliable, and scalable digital solutions. We specialize in web development, mobile app development, UI/UX design, and full‑stack software engineering.
+
+              Our goal is simple: to help individuals and businesses bring their ideas to life using clean code, smart design, and the latest technologies.
+
+              We believe in delivering high‑quality products, transparent communication, and long‑term support so our clients can grow with confidence. Whether you’re a startup or an established business, we provide solutions that fit your needs.
             </Typography>
           </Grid>
 
@@ -683,7 +665,6 @@ export default function HomePage() {
                         letterSpacing: 0.4,
                       }}
                     >
-                      READ MORE →
                     </Typography>
                   </Box>
                 </Box>
@@ -795,7 +776,7 @@ export default function HomePage() {
                           backgroundPosition: "center",
                         }}
                       >
-              
+
                       </Box>
 
                       {/* CONTENT */}
