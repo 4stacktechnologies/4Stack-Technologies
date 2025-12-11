@@ -147,7 +147,7 @@ export default function Navbar() {
             color="primary"
             variant="text"
             sx={{ fontWeight: 500 }}
-            onClick={() => handleContactLocation("Nagpur")}
+            onClick={() => handleNavigate("/contact")}
           >
             Contact Us
           </Button>
@@ -172,18 +172,7 @@ export default function Navbar() {
 
             {/* Products mobile */}
             <MenuItem onClick={() => handleNavigate("/galary")} >Products</MenuItem>
-            <MenuItem
-              sx={{ pl: 4 }}
-              onClick={() => handleNavigate("/products/smart-energy-ms-ai")}
-            >
-              Smart Energy MS-AI
-            </MenuItem>
-            <MenuItem
-              sx={{ pl: 4 }}
-              onClick={() => handleNavigate("/products/smart-genset-ms")}
-            >
-              Smart Genset MS
-            </MenuItem>
+            
 
             {/* Skill Dev mobile */}
             <MenuItem onClick={() =>
@@ -192,7 +181,7 @@ export default function Navbar() {
             
 
             {/* Contact mobile */}
-            <MenuItem onClick={() => handleContactLocation("contact#nagpur")} >Contact Us</MenuItem>
+            <MenuItem onClick={() => handleContactLocation("/contact")} >Contact Us</MenuItem>
             
           </Menu>
         </Box>
