@@ -20,7 +20,7 @@ import OverviewPage from "./pages/Overview";
 import WhyEsmPage from "./pages/WhyEsm";
 import LeadershipPage from "./pages/Leadership";
 import VisionMissionPage from "./pages/VisionMission";
-import ContactPage from "./pages/Contact";
+import ContactPage from "./pages/ContactPage";
 
 import SkillDevelopmentPage from "./pages/SkillDevelopment";
 import SmartEnergyPage from "./pages/SmartEnergyMSAI";
@@ -55,7 +55,7 @@ export default function App() {
         maxWidth="lg"
         sx={{
           flex: 1,
-          pt:1,
+          pt: 1,
           px: { xs: 0, md: 2 },   // ✅ no padding on mobile
           pb: { xs: 3, md: 4 },
           overflow: "visible"    // ✅ allow slide movement
@@ -81,6 +81,7 @@ export default function App() {
             element={<Galary />}
           />
 
+
           <Route path="*" element={<NotFound   />} />
           
         </Routes>
@@ -100,6 +101,7 @@ export default function App() {
       >
         <Container maxWidth="lg" sx={{ overflowX: "hidden" }}>
           <Grid container spacing={6}>
+            {/* Contact Section */}
             <Grid item xs={12} md={6}>
               <Typography
                 variant="subtitle1"
@@ -124,67 +126,107 @@ export default function App() {
               </Typography>
             </Grid>
 
-            <Grid item xs={12} md={6}>
-              {/* <Typography
+            {/* Quick Links */}
+            <Grid item xs={12} md={3}>
+              <Typography
                 variant="subtitle1"
                 sx={{ letterSpacing: 1.5, fontWeight: 600, mb: 1 }}
               >
-                NEWSLETTER SIGNUP
-              </Typography> */}
+                QUICK LINKS
+              </Typography>
 
-              {/* <Typography variant="body2" sx={{ mb: 2 }}>
-                Subscribe to our newsletter to get important news,
-                <br />
-                insights and updates from our team:
-              </Typography> */}
-
-              {/* ✅ SINGLE VALID FORM */}
-              {/* <Box
-                component="form"
-                onSubmit={(e) => e.preventDefault()}
-                sx={{
-                  display: "flex",
-                  flexDirection: { xs: "column", sm: "row" },
-                  gap: 1.5,
-                  mb: 3
-                }}
-              > */}
-                {/* <TextField
-                  size="small"
-                  variant="outlined"
-                  placeholder="Enter your email"
-                  type="email"
-                  sx={{
-                    flex: 1,
-                    "& .MuiOutlinedInput-root": {
-                      bgcolor: "rgba(15,23,42,0.9)",
-                      color: "white"
-                    }
-                  }}
-                /> */}
-
-                {/* <Box
-                  component="button"
-                  type="submit"
-                  sx={{
-                    px: 3,
-                    py: 1,
-                    borderRadius: 999,
-                    fontSize: 14,
-                    fontWeight: 600,
-                    border: "none",
-                    cursor: "pointer",
-                    bgcolor: "#0EA5E9",
-                    color: "#0B1120",
-                    "&:hover": { bgcolor: "#38BDF8" }
+              <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+                <a
+                  href="/"
+                  style={{
+                    color: "rgba(249,250,251,0.9)",
+                    textDecoration: "none",
+                    fontSize: "14px"
                   }}
                 >
-                  Subscribe
-                </Box> */}
-              {/* </Box> */}
+                  Home
+                </a>
+
+                <a
+                  href="/about"
+                  style={{
+                    color: "rgba(249,250,251,0.9)",
+                    textDecoration: "none",
+                    fontSize: "14px"
+                  }}
+                >
+                  About
+                </a>
+
+                <a
+                  href="/services"
+                  style={{
+                    color: "rgba(249,250,251,0.9)",
+                    textDecoration: "none",
+                    fontSize: "14px"
+                  }}
+                >
+                  Services
+                </a>
+
+                <a
+                  href="/contact"
+                  style={{
+                    color: "rgba(249,250,251,0.9)",
+                    textDecoration: "none",
+                    fontSize: "14px"
+                  }}
+                >
+                  Contact
+                </a>
+              </Box>
+            </Grid>
+
+            {/* Social Media */}
+            <Grid item xs={12} md={3}>
+              <Typography
+                variant="subtitle1"
+                sx={{ letterSpacing: 1.5, fontWeight: 600, mb: 1 }}
+              >
+                FOLLOW US
+              </Typography>
+
+              <Box sx={{ display: "flex", gap: 2, mt: 2 }}>
+                <IconButton
+                  component="a"
+                  href="https://facebook.com/yourpage"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{ color: "white" }}
+                >
+                  <FacebookIcon />
+                </IconButton>
+
+                <IconButton
+                  component="a"
+                  href="https://instagram.com/yourpage"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{ color: "white" }}
+                >
+                  <InstagramIcon />
+                </IconButton>
+
+                <IconButton
+                  component="a"
+                  href="https://linkedin.com/company/yourpage"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{ color: "white" }}
+                >
+                  <LinkedInIcon />
+                </IconButton>
+              </Box>
             </Grid>
           </Grid>
 
+
+          {/* Bottom Strip */}
           <Box
             sx={{
               mt: 5,
@@ -206,6 +248,7 @@ export default function App() {
           </Box>
         </Container>
       </Box>
+
 
       {/* SCROLL TO TOP */}
       <IconButton
