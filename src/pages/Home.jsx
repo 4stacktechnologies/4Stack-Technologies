@@ -103,59 +103,40 @@ const serviceCards = [
 // ================= PROJECTS (6) =================
 const projects = [
   {
-    title: "K.S.R College of Engineering",
-    category: "Center of Excellence",
-    tag: "Rs. 25 Cr.",
+    title: "Pedopt",
+    category: "Web Application",
+    tag: "Completed",
     description:
-      "ESM has established a Center of Excellence (COE) in Smart Manufacturing at K.S.R. College of Engineering, featuring industrial-grade CNC machines, 3D printers, and automation systems. The COE fosters innovation, hands-on skill development, research, and provides industry-ready solutions for emerging technologies.",
-    image: "https://esm.co.in/wp-content/uploads/2025/04/8A-KSR.jpg"
+      "Pedopt is a pet donation and adoption website that connects pet owners, shelters, and adopters. Users can donate pets, browse adoptable pets, schedule visits, and complete the adoption process seamlessly.",
+    image: "https://images.pexels.com/photos/46024/pexels-photo-46024.jpeg"
   },
   {
-    title: "GLA University",
-    category: "Center of Excellence",
-    tag: "Rs. 25 Cr.",
+    title: "Hostel Maintenance Website",
+    category: "Web Portal",
+    tag: "Ongoing",
     description:
-      "ESM has established a Center of Excellence (COE) in Smart Manufacturing at GLA University, equipped with industrial-grade CNC machines, 3D printers, and automation systems. The COE promotes innovation, hands-on skill development, cutting-edge research, and delivers industry-ready solutions for emerging technologies.",
-    image:
-      "https://esm.co.in/wp-content/uploads/2025/04/10A-GLA-1536x960.jpg",
+      "A website designed to manage hostel maintenance requests, track issues, assign workers, and maintain transparency in the hostel management system.",
+    image: "https://img.youtube.com/vi/PatfriYA4Tg/maxresdefault.jpg"
   },
   {
-    title: "DTE Uttarakhand",
-    category: "Center of Excellence",
-    tag: "Rs. 62 Cr.",
+    title: "Solar Customer Handling",
+    category: "Management System",
+    tag: "In Use",
     description:
-      "ESM has signed an MoU with the Government of Uttarakhand to establish a Center of Excellence (COE) in Smart Manufacturing. The upcoming COE will be equipped with industrial-grade CNC machines, 3D printers, and automation systems, aiming to foster innovation, hands-on skill development, research, and industry-ready solutions for emerging technologies.",
-    image:
-      "https://esm.co.in/wp-content/uploads/2025/04/12A-Uttarakhand-1536x960.jpg",
+      "A system for managing solar customer inquiries, installation tracking, AMC handling, and customer support.",
+    image: "https://images.unsplash.com/photo-1509395176047-4a66953fd231" // Works 100%
   },
   {
-    title: "CoE SCET",
-    category: "Center of Excellence",
-    tag: "Rs. 26 Cr.",
+    title: "Kindergarten School Website",
+    category: "Website Development",
+    tag: "Completed",
     description:
-      "ESM has established a Center of Excellence (COE) focused on Data Science, IIoT, and Smart Manufacturing, equipped with industrial-grade robotic arms, CNC machines, and showcasing new products like Smart Washroom and Smart Agriculture solutions, fostering innovation and skill development.",
-    image:
-      "https://esm.co.in/wp-content/uploads/2025/04/2A-SCET-1536x960.jpg",
-  },
-  {
-    title: "DTE Maharashtra",
-    category: "Center of Excellence",
-    tag: "Rs. 1.25 Cr.",
-    description:
-      "ESM has established a Center of Excellence (COE) focused on Smart Manufacturing with PTC solutions worth ₹1.25 crore across five Government Polytechnics in Maharashtra, fostering advanced skill development, innovation, and industry-oriented training.",
-    image:
-      "	https://esm.co.in/wp-content/uploads/2025/04/4A-DTE-Maharashtra-1536x960.jpg",
-  },
-  {
-    title: "ESM COE at Invertis University",
-    category: "Center of Excellence",
-    tag: "Rs. 30 Cr.",
-    description:
-      "ESM has established a Center of Excellence (COE) focused on Data Science, IIoT, Smart Manufacturing, with industrial-grade robotic arms, CNC machines, fostering innovation, skill development, and industry-ready solutions.",
-    image:
-      "https://esm.co.in/wp-content/uploads/2025/04/6A-ESM-1-1536x960.jpg",
-  },
+      "A vibrant kindergarten website featuring admissions info, gallery, curriculum details, and parent communication tools.",
+    image: "https://images.unsplash.com/photo-1588075592446-265fd1e6e76f" // Works 100%
+  }
 ];
+
+
 
 export default function HomePage() {
   // HERO + intro mini carousel state
@@ -853,37 +834,7 @@ export default function HomePage() {
         </Box>
 
         {/* ================= STATS BAND ================= */}
-        <Paper
-          elevation={0}
-          sx={{
-            p: 3,
-            borderRadius: 3,
-            background:
-              "linear-gradient(90deg, rgba(27,132,231,1) 0%, rgba(124,58,237,1) 100%)",
-            color: "white",
-          }}
-        >
-          <Grid container spacing={3}>
-            {[
-              ["95", "SEMS-AI Installations"],
-              ["98", "Skill Development"],
-              ["90", "SGMS Deployments"],
-              ["92", "Smart Product Development"],
-            ].map(([value, label]) => (
-              <Grid item xs={12} md={3} key={label}>
-                <Stack
-                  spacing={0.5}
-                  alignItems={{ xs: "flex-start", md: "center" }}
-                >
-                  <Typography variant="h4" sx={{ fontWeight: 700 }}>
-                    {value}
-                  </Typography>
-                  <Typography variant="body2">{label}</Typography>
-                </Stack>
-              </Grid>
-            ))}
-          </Grid>
-        </Paper>
+       
       </Box>
     </Box>
   );
