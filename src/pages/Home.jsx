@@ -21,46 +21,35 @@ import Intro3 from "../assets/4A-1920x1194.jpg";
 // ================= TOP HERO: 6 SLIDES (removed SEMS-AI, IBC, SARFAESI, Systems Management) =================
 const heroSlides = [
   {
-    title: "Skill Development",
-    tag: "Future-ready Workforce",
+    title: "Pedopt",
+    tag: "Web Application", // category used here
     description:
-      "Industry-aligned skill development programs that empower professionals and students for emerging opportunities.",
-    image:
-      "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "Pedopt is a pet donation and adoption website that connects pet owners, shelters, and adopters. Users can donate pets, browse adoptable pets, schedule visits, and complete the adoption process seamlessly.",
+    image: "https://images.pexels.com/photos/46024/pexels-photo-46024.jpeg"
   },
   {
-    title: "Digital Manufacturing",
-    tag: "Industry 4.0",
+    title: "Hostel Maintenance Website",
+    tag: "Web Portal", // category used here
     description:
-      "Digital manufacturing and smart factory solutions that connect machines, data and decisions on one platform.",
-    image:
-      "https://images.pexels.com/photos/3738735/pexels-photo-3738735.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "A website designed to manage hostel maintenance requests, track issues, assign workers, and maintain transparency in the hostel management system.",
+    image: "https://img.youtube.com/vi/PatfriYA4Tg/maxresdefault.jpg"
   },
   {
-    title: "Insolvency Professional",
-    tag: "Expert Stewardship",
+    title: "Solar Customer Handling",
+    tag: "Management System", // category used here
     description:
-      "Experienced Insolvency Professionals (IPs) who manage complex cases with transparent stakeholder engagement.",
-    image:
-      "https://images.pexels.com/photos/1181400/pexels-photo-1181400.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "A system for managing solar customer inquiries, installation tracking, AMC handling, and customer support.",
+    image: "https://images.unsplash.com/photo-1509395176047-4a66953fd231"
   },
   {
-    title: "Data Science",
-    tag: "Decisions From Data",
+    title: "Kindergarten School Website",
+    tag: "Website Development", // category used here
     description:
-      "Data science solutions that convert raw numbers into actionable insights for finance and operations.",
-    image:
-      "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  },
-  {
-    title: "Internet of Things",
-    tag: "Smart Connected Systems",
-    description:
-      "IoT-based monitoring platforms for energy, assets and operations, built on secure embedded and cloud stacks.",
-    image:
-      "https://images.pexels.com/photos/1181465/pexels-photo-1181465.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  },
+      "A vibrant kindergarten website featuring admissions info, gallery, curriculum details, and parent communication tools.",
+    image: "https://images.unsplash.com/photo-1588075592446-265fd1e6e76f"
+  }
 ];
+
 
 // ================= INTRO MINI CAROUSEL (RIGHT SIDE, 3 SLIDES) =================
 const introSlides = [{ image: Intro1 }, { image: Intro2 }, { image: Intro3 }];
