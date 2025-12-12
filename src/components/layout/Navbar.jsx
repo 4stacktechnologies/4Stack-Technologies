@@ -122,14 +122,14 @@ export default function Navbar() {
             About Us
           </Button>
           {/* Products */}
-          <Button
+          {/* <Button
             color="primary"
             variant="text"
             sx={{ fontWeight: 500 }}
             onClick={() => handleNavigate("/galary")}
           >
             Galary
-          </Button>
+          </Button> */}
 
           {/* Skill Development */}
           <Button
@@ -171,13 +171,13 @@ export default function Navbar() {
             
 
             {/* Products mobile */}
-            <MenuItem onClick={() => handleNavigate("/galary")} >Products</MenuItem>
+            {/* <MenuItem onClick={() => handleNavigate("/galary")} >Products</MenuItem> */}
             
 
             {/* Skill Dev mobile */}
             <MenuItem onClick={() =>
                 handleNavigate("/services")
-              }>Skill Development</MenuItem>
+              }>Services</MenuItem>
             
 
             {/* Contact mobile */}
