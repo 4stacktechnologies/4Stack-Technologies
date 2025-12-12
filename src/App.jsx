@@ -114,15 +114,15 @@ export default function App() {
                 variant="subtitle2"
                 sx={{ fontWeight: 700, mb: 2, textTransform: "uppercase" }}
               >
-                Elixgen Systems Management Pvt. Ltd.
+              4 Stack Technologies
               </Typography>
 
               <Typography variant="body2" sx={{ lineHeight: 1.8 }}>
-                1502, 15th Floor, Ved Solitaire, Above Starbucks
+                Phone: +91 9405420396
                 <br />
-                Cement Road, Dharmapeth Extension
+                Email: 4stacktechnologies@gmail.com
                 <br />
-                Shivaji Nagar, Nagpur, Maharashtra, 440010
+                 Nagpur, Maharashtra,India
               </Typography>
             </Grid>
 
@@ -242,7 +242,7 @@ export default function App() {
                 color: "rgba(148,163,184,0.9)"
               }}
             >
-              © {new Date().getFullYear()} Elixgen Systems Management Pvt. Ltd.
+              © {new Date().getFullYear()} 4 Stack Technologies
               All rights reserved.
             </Typography>
           </Box>
