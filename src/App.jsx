@@ -16,23 +16,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/layout/Navbar";
 import HomePage from "./pages/Home";
-import OverviewPage from "./pages/Overview";
-import WhyEsmPage from "./pages/WhyEsm";
-import LeadershipPage from "./pages/Leadership";
-import VisionMissionPage from "./pages/VisionMission";
 import ContactPage from "./pages/ContactPage";
-
-import SkillDevelopmentPage from "./pages/SkillDevelopment";
-import SmartEnergyPage from "./pages/SmartEnergyMSAI";
-import SmartGensetPage from "./pages/SmartGensetMS";
-
-import IndustryInsidePage from "./pages/SkillIndustryInside";
-import SkillIoTPage from "./pages/SkillIoT";
-import SkillDataSciencePage from "./pages/SkillDataScience";
-import SkillSmartMfgPage from "./pages/SkillSmartManufacturing";
-import SkillEVPage from "./pages/SkillEV";
-import SkillEVMechanicalPage from "./pages/SkillEVMechanical";
-import SkillEVElectronicPage from "./pages/SkillEVElectronic";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Galary from "./pages/Galary";
